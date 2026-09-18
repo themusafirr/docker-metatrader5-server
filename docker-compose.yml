@@ -1,0 +1,16 @@
+services:
+  mt5:
+    image: ghcr.io/gmag11/metatrader5-docker:latest
+    container_name: hermes_pepperstone_mt5
+    platform: linux/amd64
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+      - '8888:3000'
+      - '8001:8001'
+    volumes:
+      - /home/ubuntu/mt5_server/config:/config
+    environment:
+      - CUSTOM_USER=ubuntu
+      - PASSWORD=${MT5_PASSWORD:-SecurePasswordPlaceholder}
+      - TZ=Asia/Kolkata

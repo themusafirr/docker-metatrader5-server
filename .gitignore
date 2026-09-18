@@ -1,0 +1,8 @@
+.env
+config/
+*.log
+*.xwd
+*.png
+__pycache__/
+*.pyc
+.DS_Store
